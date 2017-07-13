@@ -1,0 +1,64 @@
+" enable syntax highlighting
+syntax enable
+
+" show line numbers
+set number
+
+" set tabs to have 4 spaces
+set ts=4
+
+" indent when moving to the next line while writing code
+set autoindent
+
+" expand tabs into space
+set expandtab
+
+" when using the >> or << commands, shift lines by 4 spaces
+set shiftwidth=4
+
+" show a visual line under the cursor's current line
+set cursorline
+
+" show the amtching part of the pair for [] {} and ()
+set showmatch
+
+" enable all Python syntax highlighting features
+let python_highlight_all = 1
+
+" bind <TAB> + <H/J/K/L> keys to move between windows, instead of <Ctrl> + <W> + <H/J/K/L>
+"" map <TAB> <C-W>
+" bind double <TAB> to rotate between windows
+map <TAB><TAB> <C-W><C-W>
+
+" Useful settings
+set history=700
+set undolevels=700
+
+" UtilSnips Trigger Configuration
+let g:UtilSnipsExpandTrigger="<TAB>"
+
+
+" Auto-Reload .vimrc file whenever it changes
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+call plug#begin('~/.vim/plugged')
+
+    " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+    Plug 'junegunn/vim-easy-align'
+
+    " UltiSnips - The ultimate snippet solution for Vim.
+    Plug 'SirVer/ultisnips'
+    
+    " VIM Snippets
+    Plug 'honza/vim-snippets'
+
+    " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
+    Plug 'klen/python-mode'
+
+    " Powerline is a statusline plugin for vim
+    Plug 'powerline/powerline'
+
+call plug#end()

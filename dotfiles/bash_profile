@@ -1,0 +1,8 @@
+# Git Aliases for common cmds
+alias gstatus='git status'
+alias gstat='gstatus'
+alias gadd='git add .'
+alias gpush='git push'
+alias gpull='git pull'
+alias gcommit='git commit'
+alias gdiff='git diff'
