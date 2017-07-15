@@ -22,6 +22,6 @@ echo
 VIM_AUTOLOAD_DIR="${HOME}/.vim/autoload"
 VIM_PLUG_URL='https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 mkdir $VIM_AUTOLOAD_DIR -p
-[ ! -x "${VIM_AUTOLOAD_DIR}/plug.vim" ] && [ `which curl 2>/dev/null` ] && curl $VIM_PLUG_URL > "${VIM_AUTOLOAD_DIR}/plug.vim"
-[ ! -x "${VIM_AUTOLOAD_DIR}/plug.vim" ] && [ `which wget 2>/dev/null` ] && wget $VIM_PLUG_URL -O "${VIM_AUTOLOAD_DIR}/plug.vim"
+[ ! -f "${VIM_AUTOLOAD_DIR}/plug.vim" ] && [ `which curl 2>/dev/null` ] && curl $VIM_PLUG_URL > "${VIM_AUTOLOAD_DIR}/plug.vim"
+[ ! -f "${VIM_AUTOLOAD_DIR}/plug.vim" ] && [ `which wget 2>/dev/null` ] && wget $VIM_PLUG_URL -O "${VIM_AUTOLOAD_DIR}/plug.vim"
 
