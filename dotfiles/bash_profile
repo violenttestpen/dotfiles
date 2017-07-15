@@ -6,3 +6,6 @@ alias gpush='git push'
 alias gpull='git pull'
 alias gcommit='git commit'
 alias gdiff='git diff'
+
+# Common export Bash variables
+export EDITOR="/usr/bin/vim"
