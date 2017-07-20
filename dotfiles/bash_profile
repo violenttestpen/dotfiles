@@ -6,13 +6,23 @@ alias gpush='git push'
 alias gpull='git pull'
 alias gcommit='git commit'
 alias gdiff='git diff'
+alias glog='git log'
+alias gclone='git clone'
 
 # Common export Bash variables
 export EDITOR="/usr/bin/vim"
 
 # Docker aliases for common cmds
-alias dimages='docker images'
+alias dimg='docker images'
+alias dimgs='docker images'
 alias dps='docker ps'
 alias drun='docker run'
 alias dstart='docker start'
 alias dstop='docker stop'
+alias dbuild='docker build'
+alias dinspect='docker inspect'
+alias dnet='docker network'
+
+# Docker aliases (specific)
+alias dstopall='dstop `dps -aq`'
+alias drmall='drm `dps -aq`'
