@@ -25,6 +25,7 @@ alias dbuild='docker build'
 alias dinspect='docker inspect'
 alias dnet='docker network'
 alias dexec='docker exec'
+alias dlogs='docker logs'
 
 # Docker aliases (specific)
 alias dstopall='dstop `dps -aq`'
