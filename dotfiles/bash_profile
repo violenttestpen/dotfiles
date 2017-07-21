@@ -24,7 +24,13 @@ alias drmi='docker rmi'
 alias dbuild='docker build'
 alias dinspect='docker inspect'
 alias dnet='docker network'
+alias dexec='docker exec'
 
 # Docker aliases (specific)
 alias dstopall='dstop `dps -aq`'
 alias drmall='drm `dps -aq`'
+
+# Docker-Compose aliases
+alias dcup='docker-compose up'
+alias dcdown='docker-compose down'
+alias dcbuild='docker-compose build'
