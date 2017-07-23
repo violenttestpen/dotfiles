@@ -35,10 +35,15 @@ alias drund='docker run -d'
 alias dstopall='dstop `dps -aq`'
 alias drmall='drm `dps -aq`'
 alias dexecit='docker exec -it'
+alias drunonce='drun -it --rm'
 alias drunitrm='drun -it --rm'
 
 # Docker-Compose aliases
 alias dcom='docker-compose'
+alias dcrun='docker-compose run'
 alias dcup='docker-compose up'
 alias dcdown='docker-compose down'
 alias dcbuild='docker-compose build'
+
+# Docker-Compose aliases (specific)
+alias dcrunonce='docker-compose run --rm'
