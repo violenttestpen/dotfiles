@@ -31,8 +31,11 @@ alias dpush='docker push'
 alias dtag='docker tag'
 
 # Docker aliases (specific)
+alias drund='docker run -d'
 alias dstopall='dstop `dps -aq`'
 alias drmall='drm `dps -aq`'
+alias dexecit='docker exec -it'
+alias drunitrm='drun -it --rm'
 
 # Docker-Compose aliases
 alias dcom='docker-compose'
