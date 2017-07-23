@@ -26,12 +26,16 @@ alias dinspect='docker inspect'
 alias dnet='docker network'
 alias dexec='docker exec'
 alias dlogs='docker logs'
+alias dpull='docker pull'
+alias dpush='docker push'
+alias dtag='docker tag'
 
 # Docker aliases (specific)
 alias dstopall='dstop `dps -aq`'
 alias drmall='drm `dps -aq`'
 
 # Docker-Compose aliases
+alias dcom='docker-compose'
 alias dcup='docker-compose up'
 alias dcdown='docker-compose down'
 alias dcbuild='docker-compose build'
