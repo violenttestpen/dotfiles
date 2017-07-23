@@ -35,6 +35,7 @@ alias drund='docker run -d'
 alias dstopall='dstop `dps -aq`'
 alias drmall='drm `dps -aq`'
 alias dexecit='docker exec -it'
+alias drunonce='drun -it --rm'
 alias drunitrm='drun -it --rm'
 
 # Docker-Compose aliases
