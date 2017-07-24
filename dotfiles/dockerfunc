@@ -1,0 +1,23 @@
+DOCKER_RUNONCE="docker run --rm"
+BIND_TIMEZONE="-v /etc/localtime:/etc/localtime:ro"
+BIND_HOME_VOL="-v $HOME:$HOME"
+BIND_X11_DISPLAY="-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY"
+
+rm_stopped() {
+    local name=$1
+    local state=`docker inspect --format "{{.State.Running}}" $name 2>/dev/null`
+
+    if [[ "$state" == "false" ]]; then
+        docker rm $name
+    fi
+}
+
+libreoffice() {
+    rm_stopped libreoffice
+
+    $DOCKER_RUNONCE \
+        $BIND_TIMEZONE \
+        $BIND_HOME_VOL \
+        $BIND_X11_DISPLAY \
+        --name libreoffice libreoffice
+}
