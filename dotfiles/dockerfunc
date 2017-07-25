@@ -1,7 +1,11 @@
 DOCKER_RUNONCE="docker run --rm"
+DOCKER_RUN='docker run -d'
 BIND_TIMEZONE="-v /etc/localtime:/etc/localtime:ro"
 BIND_HOME_VOL="-v $HOME:$HOME"
-BIND_X11_DISPLAY="-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY"
+BIND_X11_DISPLAY="-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY"
+ATTACH_SOUND='-v /dev/snd:/dev/snd' #'--device /dev/snd'
+#ATTACH_SOUND='--device /dev/snd'
+ATTACH_VIDEO='--device /dev/dri'
 
 rm_stopped() {
     local name=$1
@@ -15,9 +19,21 @@ rm_stopped() {
 libreoffice() {
     rm_stopped libreoffice
 
-    $DOCKER_RUNONCE \
+    $DOCKER_RUN \
         $BIND_TIMEZONE \
         $BIND_HOME_VOL \
         $BIND_X11_DISPLAY \
         --name libreoffice libreoffice
+}
+
+x_vlc() {
+    rm_stopped vlc
+
+    $DOCKER_RUN \
+        $BIND_TIMEZONE \
+        $BIND_HOME_VOL \
+        $BIND_X11_DISPLAY \
+        $ATTACH_SOUND \
+        $ATTACH_VIDEO \
+        --name vlc vlc
 }
