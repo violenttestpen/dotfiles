@@ -1,5 +1,4 @@
 # Git aliases for common cmds
-alias gstatus='git status'
 alias gstat='gstatus'
 alias gadd='git add .'
 alias gpush='git push'
@@ -8,6 +7,8 @@ alias gcommit='git commit'
 alias gdiff='git diff'
 alias glog='git log'
 alias gclone='git clone'
+alias gbranch='git branch'
+alias gcheckout='git checkout'
 
 # Common export Bash variables
 export EDITOR="/usr/bin/vim"
@@ -34,16 +35,15 @@ alias dtag='docker tag'
 alias drund='docker run -d'
 alias dstopall='dstop `dps -aq`'
 alias drmall='drm `dps -aq`'
-alias dexecit='docker exec -it'
+alias dexec='docker exec -it'
 alias drunonce='drun -it --rm'
-alias drunitrm='drun -it --rm'
 
 # Docker-Compose aliases
 alias dcom='docker-compose'
 alias dcrun='docker-compose run'
-alias dcup='docker-compose up'
+alias dcup='docker-compose up --service-ports'
 alias dcdown='docker-compose down'
 alias dcbuild='docker-compose build'
 
 # Docker-Compose aliases (specific)
-alias dcrunonce='docker-compose run --rm'
+alias dcrunonce='docker-compose run --rm --service-ports'
