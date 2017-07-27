@@ -1,5 +1,5 @@
 # Git aliases for common cmds
-alias gstat='gstatus'
+alias gstat='git status'
 alias gadd='git add .'
 alias gpush='git push'
 alias gpull='git pull'
