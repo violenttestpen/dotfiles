@@ -30,18 +30,20 @@ alias dlogs='docker logs'
 alias dpull='docker pull'
 alias dpush='docker push'
 alias dtag='docker tag'
+alias dhist='docker history'
 
 # Docker aliases (specific)
 alias drund='docker run -d'
 alias dstopall='dstop `dps -aq`'
 alias drmall='drm `dps -aq`'
 alias dexec='docker exec -it'
-alias drunonce='drun -it --rm'
+alias drunit='drun -it'
+alias drunonce='drunit --rm'
 
 # Docker-Compose aliases
 alias dcom='docker-compose'
-alias dcrun='docker-compose run'
-alias dcup='docker-compose up --service-ports'
+alias dcrun='docker-compose run --service-ports'
+alias dcup='docker-compose up'
 alias dcdown='docker-compose down'
 alias dcbuild='docker-compose build'
 
