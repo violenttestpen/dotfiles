@@ -6,6 +6,10 @@ BIND_X11_DISPLAY="-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY"
 ATTACH_SOUND='-v /dev/snd:/dev/snd' #'--device /dev/snd'
 #ATTACH_SOUND='--device /dev/snd'
 ATTACH_VIDEO='--device /dev/dri'
+ATTACH_PULSE='-v /dev/shm:/dev/shm \
+-v /etc/machine-id:/etc/machine-id \
+-v /run/user/$(id -u)/pulse:/run/user/0/pulse \
+-v /var/lib/dbus:/var/lib/dbus'
 
 rm_stopped() {
     local name=$1
@@ -35,6 +39,7 @@ x_vlc() {
         $BIND_X11_DISPLAY \
         $ATTACH_SOUND \
         $ATTACH_VIDEO \
+        $ATTACH_PULSE \
         --name vlc vlc
 }
 
@@ -47,4 +52,14 @@ git() {
         -v $HOME/.gitconfig:/root/.gitconfig \
         -v $(pwd):/git \
         --name git git
+}
+
+keepassx() {
+    rm_stopped keepassx
+
+    $DOCKER_RUN \
+        $BIND_TIMEZONE \
+        $BIND_HOME_VOL \
+        $BIND_X11_DISPLAY \
+        --name keepassx keepassx
 }

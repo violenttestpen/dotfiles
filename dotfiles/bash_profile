@@ -9,18 +9,20 @@ alias gdiff='git diff'
 alias glog='git log'
 alias gclone='git clone'
 alias gbranch='git branch'
-alias gcheckout='git checkout'
+alias gcheck='git checkout'
 alias gmerge='git merge'
+alias greset='git reset'
+alias gremote='git remote'
 
 # Git aliases (specific)
 alias gfetchall='git fetch --all'
+galias() { alias | grep git; }
 
 # Common export Bash variables
 export EDITOR="/usr/bin/vim"
 
 # Docker aliases for common cmds
 alias dimg='docker images'
-alias dimgs='docker images'
 alias dps='docker ps'
 alias drun='docker run'
 alias dstart='docker start'
@@ -28,24 +30,29 @@ alias dstop='docker stop'
 alias drm='docker rm'
 alias drmi='docker rmi'
 alias dbuild='docker build'
-alias dinspect='docker inspect'
+alias din='docker inspect'
 alias dnet='docker network'
-alias dexec='docker exec'
 alias dlogs='docker logs'
 alias dpull='docker pull'
 alias dpush='docker push'
 alias dtag='docker tag'
 alias dhist='docker history'
+alias dsave='docker save'
+alias dload='docker load'
 
 # Docker aliases (specific)
 alias drund='docker run -d'
-alias dstopall='dstop `dps -aq`'
-alias drmall='drm `dps -aq`'
-alias dexec='docker exec -it'
-alias drunit='drun -it'
-alias drunonce='drunit --rm'
+alias dstopall='docker stop `dps -aq`'
+alias drmall='docker rm `dps -aq`'
+alias dex='docker exec -it'
+alias drunit='docker run -it'
+alias drunonce='docker run -it --rm'
+dbash() { docker exec -it $1 bash; }
+dsh() { docker exec -it $1 sh; }
+dalias() { alias | grep docker; }
 
 # Docker-Compose aliases
+alias dcex='docker-compose exec'
 alias dcom='docker-compose'
 alias dcrun='docker-compose run --service-ports'
 alias dcup='docker-compose up'
