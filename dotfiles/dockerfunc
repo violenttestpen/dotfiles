@@ -3,13 +3,10 @@ DOCKER_RUN='docker run -d'
 BIND_TIMEZONE="-v /etc/localtime:/etc/localtime:ro"
 BIND_HOME_VOL="-v $HOME:$HOME"
 BIND_X11_DISPLAY="-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY"
-ATTACH_SOUND='-v /dev/snd:/dev/snd' #'--device /dev/snd'
-#ATTACH_SOUND='--device /dev/snd'
+IS_PRIVILEGED='--privileged'
+ATTACH_SOUND='--device /dev/snd'
 ATTACH_VIDEO='--device /dev/dri'
-ATTACH_PULSE='-v /dev/shm:/dev/shm \
--v /etc/machine-id:/etc/machine-id \
--v /run/user/$(id -u)/pulse:/run/user/0/pulse \
--v /var/lib/dbus:/var/lib/dbus'
+ATTACH_PULSE="-v /dev/shm:/dev/shm -v /etc/machine-id:/etc/machine-id -v $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR"
 
 rm_stopped() {
     local name=$1
@@ -37,10 +34,11 @@ x_vlc() {
         $BIND_TIMEZONE \
         $BIND_HOME_VOL \
         $BIND_X11_DISPLAY \
+        $IS_PRIVILEGED \
         $ATTACH_SOUND \
         $ATTACH_VIDEO \
         $ATTACH_PULSE \
-        --name vlc vlc
+        --name vlc jess/vlc
 }
 
 git() {
