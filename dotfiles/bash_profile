@@ -51,6 +51,8 @@ alias drunonce='docker run -it --rm'
 dbash() { docker exec -it $1 bash; }
 dsh() { docker exec -it $1 sh; }
 dalias() { alias | grep docker; }
+alias ddf='docker system df'
+alias dprune='docker system prune'
 
 # Docker-Compose aliases
 alias dcex='docker-compose exec'
