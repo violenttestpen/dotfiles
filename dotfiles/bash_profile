@@ -39,6 +39,7 @@ alias dtag='docker tag'
 alias dhist='docker history'
 alias dsave='docker save'
 alias dload='docker load'
+alias dsearch='docker search'
 
 # Docker aliases (specific)
 alias drund='docker run -d'
