@@ -12,6 +12,6 @@ pip3 --no-cache-dir install \
 
 # Productivity
 pip3 --no-cache-dir install \
-    konch \
+    flake8 \
     isort \
-    flake8
+    konch
