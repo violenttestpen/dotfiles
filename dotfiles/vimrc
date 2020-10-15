@@ -1,6 +1,15 @@
 " enable syntax highlighting
 syntax enable
 
+" flash screen instead of beep sound
+set visualbell
+
+" change how vim represents characters on the screen
+set encoding=utf-8
+
+" set the encoding of files written
+set fileencoding=utf-8
+
 " show line numbers
 set number
 
@@ -60,5 +69,11 @@ call plug#begin('~/.vim/plugged')
 
     " Powerline is a statusline plugin for vim
     Plug 'powerline/powerline'
+
+    Plug 'vim-airline/vim-airline'
+
+    Plug 'tpope/vim-fugitive'
+
+    Plug 'fatih/vim-go', { 'tag': '*' }
 
 call plug#end()
