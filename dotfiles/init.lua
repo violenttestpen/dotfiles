@@ -48,7 +48,7 @@ vim.call('plug#begin', '~/.nvim/plugged')
 
         -- UltiSnips - The ultimate snippet solution for Vim.
         Plug 'SirVer/ultisnips'
-                   
+
         -- VIM Snippets
         Plug 'honza/vim-snippets'
 
@@ -61,7 +61,7 @@ vim.call('plug#begin', '~/.nvim/plugged')
         Plug 'vim-airline/vim-airline'
 
         Plug 'tpope/vim-fugitive'
- 
+
         Plug('fatih/vim-go', { tag = '*' })
 
         Plug 'preservim/nerdtree'

@@ -60,7 +60,7 @@ call plug#begin('~/.vim/plugged')
 
     " UltiSnips - The ultimate snippet solution for Vim.
     Plug 'SirVer/ultisnips'
-    
+
     " VIM Snippets
     Plug 'honza/vim-snippets'
 
